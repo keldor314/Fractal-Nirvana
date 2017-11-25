@@ -55,12 +55,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\glib-sharp.dll</HintPath>
     </Reference>
-    <Reference Include="GMap.NET.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.Maps.3.0.0.201-gtk\lib\net45\GMap.NET.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="GMap.NET.GTK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.Maps.3.0.0.201-gtk\lib\net45\GMap.NET.GTK.dll</HintPath>
-    </Reference>
     <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\GtkSharp\2.12\lib\gtk-sharp-2.0\gtk-dotnet.dll</HintPath>
@@ -87,12 +81,6 @@
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.3.0.0.201-gtk\lib\net45\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.Maps.3.0.0.201-gtk\lib\net45\Xamarin.Forms.Maps.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Maps.GTK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.Maps.3.0.0.201-gtk\lib\net45\Xamarin.Forms.Maps.GTK.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.3.0.0.201-gtk\lib\net45\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
@@ -118,6 +106,11 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)Fractal Nirvana\bin\$(ConfigurationName)\netstandard2.0\*" "$(TargetDir)" /e /i /Y
+xcopy "$(SolutionDir)Fractal Nirvana Renderer\bin\$(ConfigurationName)\netstandard2.0\*" "$(TargetDir)" /e /i /Y
+xcopy "$(SolutionDir)Fractal Nirvana Renderer Pipe Interface\bin\$(ConfigurationName)\netstandard2.0\*" "$(TargetDir)" /e /i /Y</PostBuildEvent>
+  </PropertyGroup>
   <Import Project="..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.0.0.201-gtk\build\netstandard1.0\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
