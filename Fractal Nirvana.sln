@@ -3,16 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fractal Nirvana", "Fractal Nirvana\Fractal Nirvana.csproj", "{111A0C92-B6E4-440C-A130-5079BA4384AF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal Nirvana GTK", "Fractal Nirvana GTK\Fractal Nirvana GTK.csproj", "{64FCDEDC-B2F5-4F12-B440-37E340659E5B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{111A0C92-B6E4-440C-A130-5079BA4384AF} = {111A0C92-B6E4-440C-A130-5079BA4384AF}
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fractal Nirvana Renderer", "Fractal Nirvana Renderer\Fractal Nirvana Renderer.csproj", "{D61E4265-48BD-4E89-9841-5404B3706320}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal Nirvana Renderer Pipe Interface", "Fractal Nirvana Renderer Pipe Interface\Fractal Nirvana Renderer Pipe Interface.csproj", "{B8A3CA2D-B94E-4E07-8793-B5715DFA29FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal_Nirvana", "Fractal_Nirvana_Avalonia\Fractal_Nirvana.csproj", "{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,22 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{111A0C92-B6E4-440C-A130-5079BA4384AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{111A0C92-B6E4-440C-A130-5079BA4384AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{111A0C92-B6E4-440C-A130-5079BA4384AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{111A0C92-B6E4-440C-A130-5079BA4384AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64FCDEDC-B2F5-4F12-B440-37E340659E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64FCDEDC-B2F5-4F12-B440-37E340659E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64FCDEDC-B2F5-4F12-B440-37E340659E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64FCDEDC-B2F5-4F12-B440-37E340659E5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D61E4265-48BD-4E89-9841-5404B3706320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D61E4265-48BD-4E89-9841-5404B3706320}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D61E4265-48BD-4E89-9841-5404B3706320}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D61E4265-48BD-4E89-9841-5404B3706320}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8A3CA2D-B94E-4E07-8793-B5715DFA29FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8A3CA2D-B94E-4E07-8793-B5715DFA29FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8A3CA2D-B94E-4E07-8793-B5715DFA29FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8A3CA2D-B94E-4E07-8793-B5715DFA29FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

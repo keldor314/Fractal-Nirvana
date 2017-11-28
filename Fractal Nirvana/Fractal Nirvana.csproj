@@ -24,18 +24,11 @@
     <EmbeddedResource Include="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preview.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.201-gtk" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.0.0.201-gtk" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Fractal Nirvana Renderer Pipe Interface\Fractal Nirvana Renderer Pipe Interface.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +38,7 @@
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Preview.xaml.cs">
+    <Compile Update="PreviewSource.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

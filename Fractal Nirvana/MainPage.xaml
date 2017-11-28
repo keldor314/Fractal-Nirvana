@@ -13,7 +13,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <local:Preview 
+            <local:PreviewImage
                 x:Name="preview"
                 Grid.ColumnSpan="2"/>
             <Label BindingContext="{x:Reference Name=preview}"

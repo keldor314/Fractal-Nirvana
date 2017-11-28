@@ -99,12 +99,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Fractal Nirvana\Fractal Nirvana.csproj">
-      <Project>{111a0c92-b6e4-440c-a130-5079ba4384af}</Project>
-      <Name>Fractal Nirvana</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)Fractal Nirvana\bin\$(ConfigurationName)\netstandard2.0\*" "$(TargetDir)" /e /i /Y

@@ -16,10 +16,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fractal Nirvana Renderer Pipe Interface\Fractal Nirvana Renderer Pipe Interface.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="ILGPU">
       <HintPath>..\..\ILGPU\Bin\Release\netcoreapp2.0\ILGPU.dll</HintPath>
     </Reference>
