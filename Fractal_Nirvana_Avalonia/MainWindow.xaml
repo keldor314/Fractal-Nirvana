@@ -1,3 +1,21 @@
-﻿<Window xmlns="https://github.com/avaloniaui" MinWidth="500" MinHeight="300">
-    <TextBlock>Hello world!</TextBlock> 
+﻿<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:local="clr-namespace:Fractal_Nirvana;assembly=Fractal_Nirvana" 
+        MinWidth="500" MinHeight="300" Title="Fractal Nirvana">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="auto"/>
+      <ColumnDefinition Width="6"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="6"/>
+      <RowDefinition Height="100"/>
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Column="0" Grid.RowSpan="3"/>
+    <GridSplitter Grid.Column="1" Grid.RowSpan="3"/>
+    <local:Preview Grid.Column="2" Grid.Row="0"/>
+    <GridSplitter Grid.Row="1" Grid.Column="2"/>
+    <TextBox Grid.Row="2" Grid.Column="2"/>
+  </Grid>
 </Window>
