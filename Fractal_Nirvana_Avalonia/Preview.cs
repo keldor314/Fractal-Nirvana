@@ -10,18 +10,18 @@ namespace Fractal_Nirvana
     {
         private Renderer renderer;
         private PrecisionTimer timer;
-        private bool updateInProgress = false;
         public Preview ()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
         private void InitializeComponent()
         {
             renderer = new Renderer();
+            renderer.StartRender();
             timer = new PrecisionTimer(60);
             Update();
         }
-        private void Update()
+        private void Update ()
         {
             Task.Run(() =>
             {
