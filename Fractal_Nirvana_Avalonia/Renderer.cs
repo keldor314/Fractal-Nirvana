@@ -7,20 +7,27 @@ namespace Fractal_Nirvana
 {
     class Renderer
     {
-        List<RenderDevice> devices = new List<RenderDevice>();
+        static bool isInitialized = false;
+        static List<RenderDevice> devices = new List<RenderDevice>();
         Context context;
         public Renderer ()
         {
-            context = new Context();
-            foreach (var accId in Accelerator.Accelerators)
+            if (!isInitialized)
             {
-                var acc = Accelerator.Create(context, accId);
-                devices.Add(new RenderDevice(acc));
+                context = new Context();
+                foreach (var accId in Accelerator.Accelerators)
+                {
+                    var acc = Accelerator.Create(context, accId);
+                    devices.Add(new RenderDevice(acc));
+                }
+                isInitialized = true;
             }
         }
         public void StartRender ()
         {
-            devices[0].StartRender();
+            foreach (RenderDevice device in devices)
+            {
+            }
         }
     }
 }

@@ -1,18 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.Threading;
+using System.Linq;
 using System;
-
-using ILGPU.Runtime;
-using Avalonia.Controls.Platform;
-using Avalonia.Threading;
 
 namespace Fractal_Nirvana
 {
     class RenderStream
     {
         private Thread streamThread;
-        private delegate void StreamCommand ();
-        private StreamCommand streamCommand;
+        private ConcurrentQueue<(RenderCommand,EventWaitHandle)> streamCommands = new ConcurrentQueue<(RenderCommand,EventWaitHandle)>();
+        private bool renderRunning = false;
         private bool continueStreamThread = true;
 
         public RenderStream ( )
@@ -21,11 +18,17 @@ namespace Fractal_Nirvana
             {
                 while (continueStreamThread)
                 {
-                    while (streamCommand != null)
+                    while (streamCommands.Count > 0)
                     {
-                        var command = streamCommand;
-                        streamCommand = null;
-                        command.Invoke();
+                        streamCommands.OrderByDescending(cmd => cmd.Item1.index - 5 * cmd.Item1.priority);
+                        ValueTuple<RenderCommand,EventWaitHandle> commandAndWaitHandle;
+                        if (streamCommands.TryDequeue(out commandAndWaitHandle))
+                        {
+                            var command = commandAndWaitHandle.Item1;
+                            var waitHandle = commandAndWaitHandle.Item2;
+                            command.result = command.command();
+                            waitHandle.Set();
+                        }
                     }
                     Thread.Sleep(1);
                 }
@@ -33,13 +36,14 @@ namespace Fractal_Nirvana
             streamThread.Start();
         }
 
+        //must be thread-safe reentrant
+        public void IssueCommand(RenderCommand command, EventWaitHandle waitHandle)
+        {
+            streamCommands.Enqueue((command, waitHandle));
+        }
+
         public void StartRender ()
         {
-            streamCommand = () => InternalStartRender();
-        }
-        private void InternalStartRender()
-        {
-            Console.WriteLine("Hello from stream thread!");
         }
 
         void StopRender () { }

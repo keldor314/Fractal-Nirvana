@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Concurrent;
+using System.Threading;
 
 using ILGPU.Runtime;
 
 namespace Fractal_Nirvana
 {
+    //This class must be thread safe and reentrant
     class RenderDevice
     {
         private Accelerator accelerator;
@@ -15,9 +15,12 @@ namespace Fractal_Nirvana
             this.accelerator = accelerator;
             stream = new RenderStream();
         }
-        public void StartRender()
+        public dynamic IssueCommand(RenderCommand command)
         {
-            stream.StartRender();
+            EventWaitHandle waitHandle = new EventWaitHandle(false,EventResetMode.AutoReset);
+            stream.IssueCommand(command, waitHandle);
+            waitHandle.WaitOne();
+            return command.result;
         }
     }
 }
