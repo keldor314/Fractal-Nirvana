@@ -9,16 +9,16 @@ namespace Fractal_Nirvana
     class RenderDevice
     {
         private Accelerator accelerator;
-        private RenderStream stream;
+        private RenderStream renderStream;
         public RenderDevice (Accelerator accelerator)
         {
             this.accelerator = accelerator;
-            stream = new RenderStream();
+            renderStream = new RenderStream();
         }
-        public dynamic IssueCommand(RenderCommand command)
+        public object IssueCommand(RenderCommand command)
         {
             EventWaitHandle waitHandle = new EventWaitHandle(false,EventResetMode.AutoReset);
-            stream.IssueCommand(command, waitHandle);
+            renderStream.IssueCommand(command, waitHandle);
             waitHandle.WaitOne();
             return command.result;
         }

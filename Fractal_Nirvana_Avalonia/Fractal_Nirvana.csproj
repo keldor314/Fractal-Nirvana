@@ -20,69 +20,14 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="Avalonia" Version="0.5.2-build4365-alpha" />
+      <PackageReference Include="Avalonia.Desktop" Version="0.5.2-build4365-alpha" />
       <PackageReference Include="ILGPU" Version="0.2.1" />
       <PackageReference Include="Serilog" Version="2.6.0-dev-00932" />
       <PackageReference Include="Serilog.Sinks.Trace" Version="3.0.0-dev-00724" />
       <PackageReference Include="SkiaSharp" Version="1.59.2" />
     </ItemGroup>
     <ItemGroup>
-      <Reference Include="Avalonia.Animation">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Animation.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Base">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Base.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Controls">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Controls.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Diagnostics">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\Avalonia.Diagnostics.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.DotNetCoreRuntime">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetCoreRuntime\bin\Release\netcoreapp2.0\Avalonia.DotNetCoreRuntime.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Gtk3">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetCoreRuntime\bin\Release\netcoreapp2.0\Avalonia.Gtk3.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Input">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Input.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Interactivity">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Interactivity.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Layout">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Layout.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Logging.Serilog">
-        <HintPath>..\..\Avalonia\src\Avalonia.Logging.Serilog\bin\Release\netstandard2.0\Avalonia.Logging.Serilog.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Markup">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\Avalonia.Markup.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Markup.Xaml">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\Avalonia.Markup.Xaml.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.MonoMac">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetCoreRuntime\bin\Release\netcoreapp2.0\Avalonia.MonoMac.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Remote.Protocol">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Remote.Protocol.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Skia">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetCoreRuntime\bin\Release\netcoreapp2.0\Avalonia.Skia.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Styling">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Styling.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Themes.Default">
-        <HintPath>..\..\Avalonia\src\Avalonia.Themes.Default\bin\Release\netstandard2.0\Avalonia.Themes.Default.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Visuals">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetFrameworkRuntime\bin\Release\net461\Avalonia.Visuals.dll</HintPath>
-      </Reference>
-      <Reference Include="Avalonia.Win32">
-        <HintPath>..\..\Avalonia\src\Avalonia.DotNetCoreRuntime\bin\Release\netcoreapp2.0\Avalonia.Win32.dll</HintPath>
-      </Reference>
       <Reference Include="JetBrains.Annotations">
         <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\JetBrains.Annotations.dll</HintPath>
       </Reference>

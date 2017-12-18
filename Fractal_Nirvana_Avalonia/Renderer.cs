@@ -23,10 +23,20 @@ namespace Fractal_Nirvana
                 isInitialized = true;
             }
         }
-        public void StartRender ()
+        public void StartRender (int width, int height)
         {
             foreach (RenderDevice device in devices)
             {
+                var command = new RenderCommand((RenderStream stream) => RenderStream.StartRender(stream, width, height));
+                device.IssueCommand(command);
+            }
+        }
+        public void StopRender ()
+        {
+            foreach (RenderDevice device in devices)
+            {
+                var command = new RenderCommand((RenderStream stream) => RenderStream.StopRender(stream));
+                device.IssueCommand(command);
             }
         }
     }

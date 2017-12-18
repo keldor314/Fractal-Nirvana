@@ -8,9 +8,9 @@ namespace Fractal_Nirvana
         static int currIndex = 0;
         public int priority;
         public int index;
-        public Func<dynamic> command;
-        public dynamic result;
-        public RenderCommand(Func<dynamic> command, int priority)
+        public Func<RenderStream,object> command;
+        public object result;
+        public RenderCommand(Func<RenderStream, object> command, int priority=0)
         {
             index = Interlocked.Increment(ref currIndex);
             this.priority = priority;

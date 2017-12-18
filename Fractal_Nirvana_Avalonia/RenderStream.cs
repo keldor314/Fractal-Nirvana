@@ -26,7 +26,7 @@ namespace Fractal_Nirvana
                         {
                             var command = commandAndWaitHandle.Item1;
                             var waitHandle = commandAndWaitHandle.Item2;
-                            command.result = command.command();
+                            command.result = command.command(this);
                             waitHandle.Set();
                         }
                     }
@@ -42,11 +42,16 @@ namespace Fractal_Nirvana
             streamCommands.Enqueue((command, waitHandle));
         }
 
-        public void StartRender ()
+        public static object StartRender (RenderStream s, int width, int height)
         {
+            s.renderRunning = true;
+            return null;
         }
-
-        void StopRender () { }
+        public static object StopRender (RenderStream s)
+        {
+            s.renderRunning = false;
+            return null;
+        }
         void ClearRenderTarget () { }
         void CaptureRenderTarget () { }
         ~RenderStream ()
