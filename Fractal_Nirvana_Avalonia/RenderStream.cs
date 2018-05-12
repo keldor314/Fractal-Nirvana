@@ -9,7 +9,6 @@ namespace Fractal_Nirvana
     {
         private Thread streamThread;
         private ConcurrentQueue<(RenderCommand,EventWaitHandle)> streamCommands = new ConcurrentQueue<(RenderCommand,EventWaitHandle)>();
-        private bool renderRunning = false;
         private bool continueStreamThread = true;
 
         public RenderStream ( )
@@ -44,12 +43,10 @@ namespace Fractal_Nirvana
 
         public static object StartRender (RenderStream s, int width, int height)
         {
-            s.renderRunning = true;
             return null;
         }
         public static object StopRender (RenderStream s)
         {
-            s.renderRunning = false;
             return null;
         }
         void ClearRenderTarget () { }
