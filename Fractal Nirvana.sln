@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal_Nirvana", "Fractal_Nirvana_Avalonia\Fractal_Nirvana.csproj", "{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fractal_Nirvana", "Fractal_Nirvana_Avalonia\Fractal_Nirvana.csproj", "{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{204CDB19-4559-4FBB-97B9-2E33752F2C44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budhabrot", "Budhabrot\Budhabrot.csproj", "{5E46BA80-46CD-4056-8864-D40AA0E52011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFB1A36-CB6B-4F5D-8D57-79494AB2366A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E46BA80-46CD-4056-8864-D40AA0E52011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E46BA80-46CD-4056-8864-D40AA0E52011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E46BA80-46CD-4056-8864-D40AA0E52011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E46BA80-46CD-4056-8864-D40AA0E52011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E46BA80-46CD-4056-8864-D40AA0E52011} = {204CDB19-4559-4FBB-97B9-2E33752F2C44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F87A50C0-256F-4456-B5AB-084AA0DA9F60}

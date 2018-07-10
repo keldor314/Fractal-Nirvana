@@ -24,27 +24,4 @@
       <PackageReference Include="Avalonia.Desktop" Version="0.6.1" />
       <PackageReference Include="ILGPU" Version="0.3.0" />
     </ItemGroup>
-    <ItemGroup>
-      <Reference Include="JetBrains.Annotations">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\JetBrains.Annotations.dll</HintPath>
-      </Reference>
-      <Reference Include="Sprache">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\Sprache.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Reactive.Core">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\System.Reactive.Core.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Reactive.Interfaces">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\System.Reactive.Interfaces.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Reactive.Linq">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\System.Reactive.Linq.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Reactive.PlatformServices">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\System.Reactive.PlatformServices.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Reactive.Windows.Threading">
-        <HintPath>..\..\Avalonia\src\Windows\Avalonia.Win32\bin\Release\System.Reactive.Windows.Threading.dll</HintPath>
-      </Reference>
-    </ItemGroup>
 </Project>

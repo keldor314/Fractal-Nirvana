@@ -3,14 +3,17 @@
 using ILGPU;
 using ILGPU.Runtime;
 
+using Fractal_Nirvana_API;
+
 namespace Fractal_Nirvana
 {
     class Renderer
     {
         static bool isInitialized = false;
-        static List<RenderDevice> devices = new List<RenderDevice>();
+        public static List<RenderDevice> devices = new List<RenderDevice>();
         Context context;
-        public Renderer ()
+        public IRenderer Engine;
+        public Renderer (IRenderer engine)
         {
             if (!isInitialized)
             {
@@ -22,22 +25,7 @@ namespace Fractal_Nirvana
                 }
                 isInitialized = true;
             }
-        }
-        public void StartRender (int width, int height)
-        {
-            foreach (RenderDevice device in devices)
-            {
-                var command = new RenderCommand((RenderStream stream) => RenderStream.StartRender(stream, width, height));
-                device.IssueCommand(command);
-            }
-        }
-        public void StopRender ()
-        {
-            foreach (RenderDevice device in devices)
-            {
-                var command = new RenderCommand((RenderStream stream) => RenderStream.StopRender(stream));
-                device.IssueCommand(command);
-            }
+            Engine = engine;
         }
     }
 }

@@ -3,16 +3,20 @@ using System.Threading;
 using System.Linq;
 using System;
 
+using ILGPU.Runtime;
+
 namespace Fractal_Nirvana
 {
-    class RenderStream
+    public class RenderStream
     {
         private Thread streamThread;
+        private AcceleratorStream deviceStream;
         private ConcurrentQueue<(RenderCommand,EventWaitHandle)> streamCommands = new ConcurrentQueue<(RenderCommand,EventWaitHandle)>();
         private bool continueStreamThread = true;
 
-        public RenderStream ( )
+        public RenderStream ( AcceleratorStream stream)
         {
+            deviceStream = stream;
             streamThread = new Thread(() =>
             {
                 while (continueStreamThread)
@@ -25,7 +29,7 @@ namespace Fractal_Nirvana
                         {
                             var command = commandAndWaitHandle.Item1;
                             var waitHandle = commandAndWaitHandle.Item2;
-                            command.result = command.command(this);
+                            command.result = command.command(deviceStream);
                             waitHandle.Set();
                         }
                     }
@@ -35,22 +39,14 @@ namespace Fractal_Nirvana
             streamThread.Start();
         }
 
-        //must be thread-safe reentrant
-        public void IssueCommand(RenderCommand command, EventWaitHandle waitHandle)
+        public object IssueCommand(RenderCommand command)
         {
+            EventWaitHandle waitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
             streamCommands.Enqueue((command, waitHandle));
+            waitHandle.WaitOne();
+            return command.result;
         }
 
-        public static object StartRender (RenderStream s, int width, int height)
-        {
-            return null;
-        }
-        public static object StopRender (RenderStream s)
-        {
-            return null;
-        }
-        void ClearRenderTarget () { }
-        void CaptureRenderTarget () { }
         ~RenderStream ()
         {
             continueStreamThread = false;
