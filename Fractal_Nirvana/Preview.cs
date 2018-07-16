@@ -34,6 +34,7 @@ namespace Fractal_Nirvana
             var size = Bounds.Size;
             var width = (int)size.Width;
             var height =(int)size.Height;
+            target = new WritableBitmap(width, height, PixelFormat.Rgba8888);
             renderer?.Engine?.StartRender(width, height);
             layoutInitialized = true;
         }
@@ -44,7 +45,6 @@ namespace Fractal_Nirvana
                 var size = Bounds.Size;
                 var width = (int)size.Width;
                 var height = (int)size.Height;
-                target = new WritableBitmap(width, height, PixelFormat.Rgba8888);
                 var buffer = target.Lock();
                 var address = buffer.Address;
                 var time = System.DateTime.Now.Ticks;
@@ -58,6 +58,7 @@ namespace Fractal_Nirvana
                     }
                 }
                 Source = target;
+                InvalidateVisual();
             }
             Task.Run(() =>
             {
