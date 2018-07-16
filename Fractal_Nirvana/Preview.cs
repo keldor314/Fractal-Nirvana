@@ -6,6 +6,7 @@ using Avalonia.Platform;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 
+using Fractal_Nirvana.API;
 
 namespace Fractal_Nirvana
 {
@@ -21,18 +22,19 @@ namespace Fractal_Nirvana
         }
         private void InitializeComponent()
         {
-            renderer = new Renderer(null);
+            //Until there's a proper interface for choosing active plugins, just use the first one found
+            renderer = new Renderer(PluginManager<IRenderer>.CreateInstance(PluginManager<IRenderer>.Plugins[0]));
             timer = new PrecisionTimer(60);
             LayoutUpdated += Preview_LayoutUpdated;
             Update();
         }
         private void Preview_LayoutUpdated(object sender, System.EventArgs e)
         {
-            renderer.Engine.StopRender();
+            renderer?.Engine?.StopRender();
             var size = Bounds.Size;
             var width = (int)size.Width;
             var height =(int)size.Height;
-            renderer.Engine.StartRender(width, height);
+            renderer?.Engine?.StartRender(width, height);
             layoutInitialized = true;
         }
         private void Update ()

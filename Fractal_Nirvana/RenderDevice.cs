@@ -7,7 +7,7 @@ using ILGPU.Runtime;
 namespace Fractal_Nirvana
 {
     //This class must be thread safe and reentrant
-    class RenderDevice
+    public class RenderDevice
     {
         private Accelerator accelerator;
         public RenderStream executionStream;

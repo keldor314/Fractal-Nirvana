@@ -20,11 +20,13 @@ namespace Fractal_Nirvana
 
         static void Main(string[] args)
         {
-            InitializeLogging();
-            AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .Start<MainWindow>();
+            BuildAvaloniaApp().Start<MainWindow>();
         }
+
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>()
+                .UsePlatformDetect()
+.           LogToDebug();
 
         public static void AttachDevTools(Window window)
         {

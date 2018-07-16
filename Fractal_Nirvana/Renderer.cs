@@ -3,7 +3,7 @@
 using ILGPU;
 using ILGPU.Runtime;
 
-using Fractal_Nirvana_API;
+using Fractal_Nirvana.API;
 
 namespace Fractal_Nirvana
 {
@@ -11,7 +11,7 @@ namespace Fractal_Nirvana
     {
         static bool isInitialized = false;
         public static List<RenderDevice> devices = new List<RenderDevice>();
-        Context context;
+        public static Context context;
         public IRenderer Engine;
         public Renderer (IRenderer engine)
         {

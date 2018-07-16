@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Fractal_Nirvana;
 
-namespace Fractal_Nirvana_API
+namespace Fractal_Nirvana.API
 {
-    class SimpleRenderer<T>: IRenderer where T : ISimpleRendererCommands, new()
+    public class SimpleRenderer<T>: IRenderer where T : ISimpleRendererCommands, new()
     {
         List<T> localEngines;
         public SimpleRenderer()
@@ -26,17 +26,22 @@ namespace Fractal_Nirvana_API
 
         public void ClearRenderTarget()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+        }
+
+        public void SetParameters(object parameters)
+        {
+            //throw new NotImplementedException();
         }
 
         public void StartRender(int width, int height)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void StopRender()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
